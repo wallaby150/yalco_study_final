@@ -70,3 +70,18 @@ for (let i = 0; i < aboutCards.length; i++) {
 
   $aboutDiv.appendChild($div);
 }
+
+$currLis = document.querySelectorAll(".curriculum__list > li");
+
+$currProgBar = document.querySelector(".curriculum__progress .bar");
+
+for (let i = 0; i < $currLis.length; i++) {
+  const $li = $currLis[i];
+
+  $li.addEventListener("mouseenter", () => {
+    $currProgBar.style.width = 200 * i + "px";
+  });
+  $li.addEventListener("mouseleave", () => {
+    $currProgBar.style.width = 0;
+  });
+}
