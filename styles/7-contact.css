@@ -15,22 +15,29 @@
 }
 
 /* 라디오 버튼 커스터마이즈 */
-input[type=radio] {
+input[type="radio"] {
   all: unset;
   display: inline-block;
   padding: 0.8em 4em;
   background-color: white;
   cursor: pointer;
 }
-input[type=radio]:checked {
+input[type="radio"]:checked {
   color: white;
   background-color: var(--color-main);
 }
-#ct_1 { border-radius: 12px 0 0 12px; }
-#ct_1::after { content: '연락처 보기'; }
-#ct_2 { border-radius: 0 12px 12px 0; }
-#ct_2::after { content: '메시지 남기기'; }
-
+#ct_1 {
+  border-radius: 12px 0 0 12px;
+}
+#ct_1::after {
+  content: "연락처 보기";
+}
+#ct_2 {
+  border-radius: 0 12px 12px 0;
+}
+#ct_2::after {
+  content: "메시지 남기기";
+}
 
 .contact__slides {
   margin: 1.6em 0;
@@ -83,19 +90,19 @@ input[type=radio]:checked {
   gap: 8px;
 }
 .contact__leave textarea,
-.contact__leave input[type=email] {
+.contact__leave input[type="email"] {
   margin: 0;
   font-size: var(--font-size-text);
   border: 2px solid var(--color-light-bd);
 }
 .contact__leave textarea::placeholder,
-.contact__leave input[type=email]::placeholder {
+.contact__leave input[type="email"]::placeholder {
   color: var(--color-lighter);
 }
 
 /* 텍스트 인풋의 경우 focus-visible이 focus를 override */
 .contact__leave textarea:focus-visible,
-.contact__leave input[type=email]:focus-visible {
+.contact__leave input[type="email"]:focus-visible {
   border: 2px solid var(--color-sub);
   outline: none;
 }
@@ -108,7 +115,7 @@ input[type=radio]:checked {
   resize: none;
   padding: 0.6em;
 }
-.contact__leave input[type=email] {
+.contact__leave input[type="email"] {
   padding: 0 0.6em;
   height: 48px;
   line-height: 48px;
@@ -130,11 +137,15 @@ input[type=radio]:checked {
 }
 
 @media (max-width: 768px) {
-  input[type=radio] {
+  input[type="radio"] {
     padding: 0.8em 2em;
   }
-  #ct_1::after { content: '연락처'; }
-  #ct_2::after { content: '메시지'; }
+  #ct_1::after {
+    content: "연락처";
+  }
+  #ct_2::after {
+    content: "메시지";
+  }
 
   .contact__contacts th {
     position: absolute;
@@ -151,7 +162,7 @@ input[type=radio]:checked {
     padding: 0.6em;
   }
   .contact__contacts td::before {
-    content: '▶';
+    content: "▶";
     margin-right: 0.6em;
     font-size: 0.67em;
     opacity: 0.5;
@@ -161,7 +172,7 @@ input[type=radio]:checked {
     flex-direction: column;
   }
   .contact__leave textarea,
-  .contact__leave input[type=email] {
+  .contact__leave input[type="email"] {
     width: 80vw;
   }
 }
@@ -173,7 +184,20 @@ input[type=radio]:checked {
     border-spacing: 3em 1em;
   }
   .contact__leave textarea,
-  .contact__leave input[type=email] {
+  .contact__leave input[type="email"] {
     width: 360px;
   }
+}
+
+.header__menu-btn.on {
+  background-color: var(--color-dark);
+}
+.header__nav.active {
+  display: inherit;
+  position: absolute;
+  top: var(--height-toolbar);
+  right: 0;
+  background-color: var(--color-dark);
+  padding-bottom: 1em;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 }

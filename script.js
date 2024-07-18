@@ -97,3 +97,19 @@ for (let i = 0; i < $contactTabs.length; i++) {
     $contactSlideCon.style.marginLeft = marginLeft;
   });
 }
+
+const $menuBtn = document.querySelector(".header__menu-btn");
+const $headerNav = document.querySelector(".header__nav");
+
+$menuBtn.addEventListener("click", (e) => {
+  $menuBtn.classList.toggle("on");
+  $headerNav.classList.toggle("active");
+
+  // 이 요소 아래 레이어에는 클릭 이벤트가 먹히지 않도록
+  e.stopPropagation();
+});
+
+document.querySelector("body").addEventListener("click", () => {
+  $menuBtn.classList.remove("on");
+  $headerNav.classList.remove("active");
+});
